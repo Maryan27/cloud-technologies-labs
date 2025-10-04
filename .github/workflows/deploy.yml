@@ -22,12 +22,12 @@ jobs:
           source: "."
           target: "/var/www/myapp"
 
-      - name: Run remote commands on EC2
-        uses: appleboy/ssh-action@v0.1.10
+      - name: Restart app service
+        uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /var/www/myapp
-            echo "Deployment complete on EC2"
+            sudo systemctl restart myapp.service
