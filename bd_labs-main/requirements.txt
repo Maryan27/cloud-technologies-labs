@@ -1,0 +1,9 @@
+Flask==3.0.2
+flasgger==0.9.7b2
+flask-mysqldb==2.0.0
+gunicorn==21.2.0
+flask_sqlalchemy==3.1.1
+flask_restful==0.3.10
+requests==2.31.0
+PyMySQL==1.1.0
+Flask-HTTPAuth==4.8.0
