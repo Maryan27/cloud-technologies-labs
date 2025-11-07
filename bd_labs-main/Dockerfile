@@ -18,11 +18,9 @@ RUN pip install --no-cache-dir gunicorn
 
 COPY . .
 
-# Увімкни "live logging" — Python не буферизує stdout/stderr
 ENV PYTHONUNBUFFERED=1
 
 EXPOSE 5000
 
-# Основна зміна: напряму запускаємо gunicorn + логування у stdout
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--access-logfile", "-", "--error-logfile", "-", "app:app"]
 
